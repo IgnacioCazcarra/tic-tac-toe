@@ -80,8 +80,8 @@ def tic_tac_toe():
             turns+=1
             
     if winner(board):
-        print("\n\tWe have a winner!\n\tCongratulations {}'s player for winning the game\n".format(player_char))
-    else: print("\n\t Ladies and gentlemen, we have a tie!")
+        print("\n\tTenemos un ganador!\n\Felicitaciones jugador {} por haber ganado este juego\n".format(player_char))
+    else: print("\n\t Señoras y señores, tenemos un empate!\n")
     draw_board(board)
             
 
