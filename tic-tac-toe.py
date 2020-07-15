@@ -6,17 +6,14 @@ turns = 0
 
 def click(buttons):
     global turns,board
-    if finished(board):
-        disableButtons(board)
-        tkinter.messagebox.showinfo("Tie","We have a tie")
-    elif buttons["text"] == " " and turns%2==0:
+
+    if buttons["text"] == " " and turns%2==0:
         buttons["text"] = "X"
         turns+=1
         if(winner(board)):
             disableButtons(board)
             current = buttons["text"]
             tkinter.messagebox.showinfo("Game over",f"{current}'s player wins")
-
     elif buttons["text"] == " " and turns%2==1:
         buttons["text"] = "O"
         turns+=1
@@ -24,6 +21,10 @@ def click(buttons):
             disableButtons(board)
             current = buttons["text"]
             tkinter.messagebox.showinfo("Game over",f"{current}'s player wins")
+    
+    if finished(board):
+        disableButtons(board)
+        tkinter.messagebox.showinfo("Game over","We have a tie")
 
 
 def disableButtons(board):
